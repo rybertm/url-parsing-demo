@@ -1,0 +1,31 @@
+[package]
+edition = "2021"
+name = "url-parsing-demo"
+version = "0.1.0"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "url-parsing-demo"
+path = "src/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.0-rc.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.6", features = [
+  "runtime-tokio-rustls",
+  "postgres",
+  "macros",
+] }
+tokio = { version = "1", features = [
+  "rt-multi-thread",
+  "sync",
+  "time",
+  "signal",
+  "macros",
+] }
+url = { version = "2" }
